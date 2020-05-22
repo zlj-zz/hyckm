@@ -6,7 +6,7 @@
 # Description: some hints
 #########################################################################
 
-function info() {
+function info_() {
   echo "       =================="
   echo "       = WELCOME to USE ="
   echo "       =================="
@@ -28,4 +28,11 @@ function info() {
   echo "   | ← Backspace | : Backspace"
   echo "   ---------------"
   echo
+}
+
+function help_() {
+  cat << EOF
+-h  --help      : Show this message
+-v  --version   : Display version information
+EOF
 }

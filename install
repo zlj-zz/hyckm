@@ -6,4 +6,5 @@ version=0.1
 
 ln -s $PWD/main.sh /bin/hyckm
 
+echo "version $version"
 echo "install finished ! use 'hyckm' to start."

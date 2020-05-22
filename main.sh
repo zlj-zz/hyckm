@@ -13,13 +13,13 @@
 . ./src/ckm.sh
 
 version=0.1
-map_path=./.Xmodmaprc
-#map_path=$HOME/.Xmodmaprc
+#map_path=./.Xmodmaprc
+map_path=$HOME/.Xmodmaprc
 
 if [[ "$#" == 0 ]]; then
   clear
   # print tips
-  info
+  info_
   # start run
   start_
 
@@ -28,7 +28,10 @@ if [[ "$#" == 0 ]]; then
 else
   for opt in "$@"; do
     case $opt in
-      --version)
+      -h|--help)
+        help_
+        ;;
+      -v|--version)
         echo "hyckm version $version"
         exit 0
         ;;
