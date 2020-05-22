@@ -25,15 +25,18 @@ function info_() {
   echo "   | Enter ⏎ | : Return   | Win ◆ | : Super_L"
   echo "   -----------            ---------"
   echo "   ---------------"
-  echo "   | ← Backspace | : Backspace"
+  echo "   | ← Backspace | : BackSpace"
   echo "   ---------------"
   echo
 }
 
 function help_() {
   cat << EOF
--h  --help      : Show this message
--v  --version   : Display version information
--r  --revert    : Revert the keyboard mapping
+Usage: hyckm [command]
+
+    -h  --help      : Show this message
+    -v  --version   : Display version information
+    -r  --revert    : Revert the keyboard mapping
+
 EOF
 }

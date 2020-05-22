@@ -6,30 +6,40 @@
 # Description: function
 #########################################################################
 
-# create '.Xmodmaprc' file
+# create '.Xmodmaprc' file{{{
 function create_xmodmaprc() {
-  touch $map_path
-  echo "clear Lock" >> $map_path
+  touch $map_path && echo "clear Lock" >> $map_path
 }
+#}}}
 
+# output change to '.Xmodmaprc'{{{
 function changekey() {
   read -p "input them :" formkey tokey
   if [[ ${dic[$formkey]} && ${dic[$tokey]} ]]; then
-    echo "keycode ${dic[$formkey]}=$tokey" >> $map_path
-    echo -e "--------------------------------ok\n"
+    keycode=${dic[$tokey]}
+    if [[ $keycode =~ 1[0-9]$ || $keycode == 49 ]]; then
+      echo "keycode ${dic[$formkey]}=${key2string[$keycode]}" >> $map_path
+      echo -e "--------------------------------ok\n"
+    else
+      echo "keycode ${dic[$formkey]}=$tokey" >> $map_path
+      echo -e "--------------------------------ok\n"
+    fi
   else
     echo -e "Don't input unsupports keys ! \n"
   fi
 }
+#}}}
 
+# run function{{{
 function start_() {
+  # '.Xmodmaprc' file process
   if [[ -e $map_path ]]; then
     read -p "The '$map_path' exists (1:append 2:recreate):" sel
     if [[ "$sel" == "2" ]]; then
       rm $map_path
       create_xmodmaprc
     elif [[ "$sel" == "1" ]]; then
-      create_xmodmaprc
+      echo
     else
       exit 1
     fi
@@ -38,8 +48,9 @@ function start_() {
     echo -e "create file '$map_path' \n"
   fi
 
+  # key change cycle
   while true; do
-    read -p "Change key ? (y/n):" flag
+    read -p "If change key ? (y/n):" flag
     if [[ "$flag" == "n" ]]; then
       break
     fi
@@ -65,8 +76,9 @@ function start_() {
     echo "change key map successful !"
   fi
 }
+#}}}
 
-# check if installed 'xmodmap'
+# check if installed 'xmodmap'{{{
 check_() {
   if [[ ! -e /usr/bin/xmodmap ]]; then
     echo "error: don't find 'xmodmap'."
@@ -74,17 +86,24 @@ check_() {
     #sudo pacman -S xorg-xmodmap
   fi
 }
+#}}}
 
-# revert the keyboard mapping
+# revert the keyboard mapping{{{
 revert_() {
   temp=./.Xmodmaprc
+  if [[ -e $temp ]]; then rm $temp; fi
   touch $temp
   echo "clear Lock" >> $temp
   #echo ${!dic[*]}
   for idx in "${!dic[@]}"; do
-    echo -e "keycode ${dic[$idx]}=$idx" >> ./.Xmodmaprc
+    keycode=${dic[$idx]}
+    if [[ $keycode =~ 1[0-9]$ || $keycode == 49 ]]; then
+      echo -e "keycode $keycode=${key2string[$keycode]}" >> $temp
+    else
+      echo -e "keycode $keycode=$idx" >> $temp
+    fi
   done
-  xmodmap ./.Xmodmaprc
-  rm ./.Xmodmaprc
+  xmodmap $temp && rm $temp
   echo "revert finished !"
 }
+#}}}
