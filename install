@@ -4,6 +4,6 @@ set -u
 
 version=0.1
 
-ln -s ./main.sh ~/.local/bin/hyckm
+ln -s $PWD/main.sh /bin/hyckm
 
 echo "install finished ! use 'hyckm' to start."

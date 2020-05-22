@@ -58,7 +58,7 @@ function start_() {
   # execute file
   read -p "Do you want to change the keys immediately ? (y/n):" confirm
   if [[ "$confirm" == "n" ]]; then
-    echo "you can type 'xmodmap $map_path' to take effect your changes."
+    echo -e "\nyou can type 'xmodmap $map_path' to take effect your changes."
   else
     xmodmap $map_path
     echo "change key map successful !"
