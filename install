@@ -2,7 +2,7 @@
 
 set -u
 
-version = 0.1
+version=0.1
 
 ln -s ./main.sh ~/.local/bin/hyckm
 
