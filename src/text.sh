@@ -34,5 +34,6 @@ function help_() {
   cat << EOF
 -h  --help      : Show this message
 -v  --version   : Display version information
+-r  --revert    : Revert the keyboard mapping
 EOF
 }
