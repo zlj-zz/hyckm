@@ -38,6 +38,10 @@ else
         echo "hyckm version $version"
         exit 0
         ;;
+      -r|--revert)
+        revert_
+        exit 0
+        ;;
       *)
         echo "error parameter !"
         exit 1

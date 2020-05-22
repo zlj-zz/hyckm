@@ -6,6 +6,7 @@
 # Description: function
 #########################################################################
 
+# create '.Xmodmaprc' file
 function create_xmodmaprc() {
   touch $map_path
   echo "clear Lock" >> $map_path
@@ -65,10 +66,25 @@ function start_() {
   fi
 }
 
+# check if installed 'xmodmap'
 check_() {
   if [[ ! -e /usr/bin/xmodmap ]]; then
     echo "error: don't find 'xmodmap'."
     exit 1
     #sudo pacman -S xorg-xmodmap
   fi
+}
+
+# revert the keyboard mapping
+revert_() {
+  temp=./.Xmodmaprc
+  touch $temp
+  echo "clear Lock" >> $temp
+  #echo ${!dic[*]}
+  for idx in "${!dic[@]}"; do
+    echo -e "keycode ${dic[$idx]}=$idx" >> ./.Xmodmaprc
+  done
+  xmodmap ./.Xmodmaprc
+  rm ./.Xmodmaprc
+  echo "revert finished !"
 }
