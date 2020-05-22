@@ -64,3 +64,11 @@ function start_() {
     echo "change key map successful !"
   fi
 }
+
+check_() {
+  if [[ ! -e /usr/bin/xmodmap ]]; then
+    echo "error: don't find 'xmodmap'."
+    exit 1
+    #sudo pacman -S xorg-xmodmap
+  fi
+}
