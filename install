@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+set -u
+
+version = 0.1
+
+ln -s ./main.sh ~/.local/bin/hyckm
+
+echo "install finished ! use 'hyckm' to start."
