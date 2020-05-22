@@ -13,6 +13,13 @@ git clone --depth=1 https://github.com/zlj-zz/hyckm.git ~/.hyckm
 
 Command line type `hyckm` to start.
 
+## Update
+
+```shell
+cd ~/.hyckm
+git pull
+```
+
 ## Uninstall
 
 ```shell
