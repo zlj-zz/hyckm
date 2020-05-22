@@ -8,9 +8,10 @@
 # Description: change your keyboard mapping
 #########################################################################
 
-. ./src/keyboardmapping.sh
-. ./src/text.sh
-. ./src/ckm.sh
+hyckm_path=$HOME/.hyckm
+. $hyckm_path/src/keyboardmapping.sh
+. $hyckm_path/src/text.sh
+. $hyckm_path/src/ckm.sh
 
 version=0.1
 #map_path=./.Xmodmaprc
