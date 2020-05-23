@@ -1,5 +1,10 @@
+*
+*/*
 
-.Xmodmap
-.Xmodmap-cn
-.Xmodmaprc
-test.sh
+!/.gitignore
+!/README.md
+!/LICENSE
+!/src
+!/main.sh
+!/install
+!/uninstall
