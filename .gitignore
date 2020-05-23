@@ -1,10 +1,13 @@
-*
-*/*
 
 !/.gitignore
 !/README.md
 !/LICENSE
-!/src
+!/src/*
 !/main.sh
 !/install
 !/uninstall
+
+.Xmodmap
+.Xmodmaprc
+hyckm
+test.sh
