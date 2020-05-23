@@ -31,6 +31,7 @@ function info_() {
 
 function help_() {
   cat << EOF
+hyckm $version - (C) 2020 Zachary
 Usage: hyckm [command]
 
     -h  --help      : Show this message
