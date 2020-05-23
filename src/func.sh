@@ -19,10 +19,12 @@ function changekey() {
     keycode=${dic[$tokey]}
     if [[ $keycode =~ 1[0-9]$ || $keycode == 49 ]]; then
       echo "keycode ${dic[$formkey]}=${key2string[$keycode]}" >> $map_path
-      echo -e "--------------------------------ok\n"
+      #echo -e "--------------------------------ok\n"
+      Proceess
     else
       echo "keycode ${dic[$formkey]}=$tokey" >> $map_path
-      echo -e "--------------------------------ok\n"
+      #echo -e "--------------------------------ok\n"
+      Proceess
     fi
   else
     echo -e "Don't input unsupports keys ! \n"
@@ -50,7 +52,7 @@ function start_() {
 
   # key change cycle
   while true; do
-    read -p "If change key ? (y/n):" flag
+    echo ; read -p "If change key ? (y/n):" flag
     if [[ "$flag" == "n" ]]; then
       break
     fi
@@ -90,7 +92,7 @@ check_() {
 
 # revert the keyboard mapping{{{
 revert_() {
-  temp=./.Xmodmaprc
+  temp=./.Xmodmap-temp
   if [[ -e $temp ]]; then rm $temp; fi
   touch $temp
   echo "clear Lock" >> $temp
@@ -105,5 +107,19 @@ revert_() {
   done
   xmodmap $temp && rm $temp
   echo "revert finished !"
+}
+#}}}
+
+# proceess{{{
+function Proceess(){
+spa=''
+i=0
+while [ $i -le 100 ]; do
+ printf "[%-50s] %d%% \r" "$spa" "$i";
+ sleep 0.005
+ ((i=i+2))
+ spa+='>'
+done
+echo
 }
 #}}}
