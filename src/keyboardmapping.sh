@@ -1,10 +1,9 @@
 #!/bin/env bash
 
-#########################################################################
 # File Name: boardkeymapping.sh
 # Author: zachary
 # Description: keyboard mapping
-#########################################################################
+
 
 declare -A dic
 dic=(

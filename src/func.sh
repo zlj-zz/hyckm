@@ -1,10 +1,9 @@
 #!/bin/env bash
 
-#########################################################################
 # File Name: ckm.sh
 # Author: zachary
 # Description: function
-#########################################################################
+
 
 # create '.Xmodmaprc' file{{{
 function create_xmodmaprc() {
