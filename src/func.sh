@@ -79,16 +79,6 @@ function start_() {
 }
 #}}}
 
-# check if installed 'xmodmap'{{{
-check_() {
-  if [[ ! -e /usr/bin/xmodmap ]]; then
-    echo "error: don't find 'xmodmap'."
-    exit 1
-    #sudo pacman -S xorg-xmodmap
-  fi
-}
-#}}}
-
 # revert the keyboard mapping{{{
 revert_() {
   temp=./.Xmodmap-temp

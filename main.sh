@@ -17,30 +17,7 @@ version=0.1
 #map_path=./.Xmodmaprc
 map_path=$HOME/.Xmodmaprc
 
-if [[ "$#" == 0 ]]; then
-  check_
-  #clear
-  info_; start_
-  #sleep 1
-  #clear
-else
-  for opt in "$@"; do
-    case $opt in
-      -h|--help)
-        help_
-        ;;
-      -v|--version)
-        echo "hyckm version $version"
-        exit 0
-        ;;
-      -r|--revert)
-        revert_
-        exit 0
-        ;;
-      *)
-        echo "error parameter !"
-        exit 1
-        ;;
-    esac
-  done
-fi
+clear -x
+info_; start_
+#sleep 1
+#clear

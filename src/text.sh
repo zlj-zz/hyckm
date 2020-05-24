@@ -29,14 +29,3 @@ function info_() {
   echo
 }
 
-function help_() {
-  cat << EOF
-hyckm $version - (C) 2020 Zachary
-Usage: hyckm [command]
-
-    -h  --help      : Show this message
-    -v  --version   : Display version information
-    -r  --revert    : Revert the keyboard mapping
-
-EOF
-}
