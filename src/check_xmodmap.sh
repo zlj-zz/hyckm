@@ -3,8 +3,8 @@
 # File Name: check_xmodmap.sh
 # Description: check if install 'xmodmap'
 # Author: zachary
-# Created Time: 2020-05-23 22:43:56
-# Last Modified: 
+# Created Time: 2020-05-23
+# Last Modified:
 
 
 if [[ -e /usr/bin/xmodmap ]]; then

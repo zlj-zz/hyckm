@@ -79,26 +79,6 @@ function start_() {
 }
 #}}}
 
-# revert the keyboard mapping{{{
-revert_() {
-  temp=./.Xmodmap-temp
-  if [[ -e $temp ]]; then rm $temp; fi
-  touch $temp
-  echo "clear Lock" >> $temp
-  #echo ${!dic[*]}
-  for idx in "${!dic[@]}"; do
-    keycode=${dic[$idx]}
-    if [[ $keycode =~ 1[0-9]$ || $keycode == 49 ]]; then
-      echo -e "keycode $keycode=${key2string[$keycode]}" >> $temp
-    else
-      echo -e "keycode $keycode=$idx" >> $temp
-    fi
-  done
-  xmodmap $temp && rm $temp
-  echo "revert finished !"
-}
-#}}}
-
 # proceess{{{
 function Proceess(){
 spa=''

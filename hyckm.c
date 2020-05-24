@@ -1,25 +1,45 @@
 /*
-Copyright(C) 1997-2020, Tech. Co.,Ltd.
-FileName: main.c
-Author: zachary
-Date: 2020-05-23 14:09:54
-Last Modified: 
-Version: <++>
-Description: <++>
+ * Copyright(C) 2020, Tech. Co.,Ltd.
+ *
+ * FileName: hyckm
+ * Author: Zachary
+ * Date: 2020-05-23
+ * Last Modified: 2020-05-24
+ * Version: 0.1
+ * Description: To help you change your keyboard mapping
  */
+#define FUNC
+#define XMOD
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 #include <getopt.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "config.h"
-#include "./src/func.c"
+#include "func.h"
 
 
+static int parseArguments(int argc, char ** argv);
 
-static int parseArguments(int argc, char ** argv){
+
+int main(int argc, char *argv[])
+{
+  int flag = parseArguments(argc, argv); // may exit()
+
+  if (access(XMODMAP, R_OK) != 0){ // check if 'xmodmap' command
+    printf("error: don't find 'xmodmap'.\n");
+    exit(1);
+  }
+
+  if (flag){ 
+    /*system("clear");*/
+    _run();
+  }
+  return 0;
+}
+
+static int parseArguments(int argc, char ** argv){/*{{{*/
   int flag = 1;
 
   static struct option long_opts[] =
@@ -48,22 +68,4 @@ static int parseArguments(int argc, char ** argv){
     }
   }
   return flag;
-}
-
-
-int main(int argc, char *argv[])
-{
-  int flag = parseArguments(argc, argv); // may exit()
-
-  if (access(XMODMAP, R_OK) != 0){
-    printf("error: don't find 'xmodmap'.\n");
-    exit(1);
-  }
-
-  if (flag){ 
-    /*system("clear");*/
-    _run();
-  }
-  return 0;
-}
-
+}/*}}}*/

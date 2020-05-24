@@ -1,15 +1,24 @@
 /*
-Copyright(C) 1997-2020, Tech. Co.,Ltd.
-FileName: func.c
-Author: zachary
-Date: 2020-05-23 14:19:48
-Last Modified: 
-Description: function
+ * Copyright(C) 2020, Tech. Co.,Ltd.
+ *
+ * FileName: func.c
+ * Author: zachary
+ * Date: 2020-05-23
+ * Last Modified: 2020-05-24
+ * Description: needed function
  */
+#define VER
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "config.h"
+#include "func.h"
 
 
 /*char* version = "0.1";*/
-static void help_info(){
+void help_info(){
   printf("hyckm %s - (C) 2020 Zachary\n", VERSION);
   printf("Usage: hyckm [command]\n\n");
 
@@ -18,29 +27,33 @@ static void help_info(){
         \n    -r  --revert    : Revert the keyboard mapping\n\n");
 }
 
-static void version_info(){
+void version_info(){
     printf("hyckm version (%s)\n\n", VERSION);
 }
 
-void _run(){
-  system("sh $HOME/.hyckm/main.sh");
-}
-
-static void revert(){
+void revert(){
   system("sh $HOME/.hyckm/src/revert.sh");
 }
 
-void sys_info(char* param){
-    if (!strcmp(param, "-h") || !strcmp(param, "--help")){
-      help_info();
-    }else if (!strcmp(param, "-v") || !strcmp(param, "--version")){
-      printf("hyckm version (%s)\n", VERSION);
-    }else if (!strcmp(param, "-r") || !strcmp(param, "--revert")){
-
-    }else {
-      printf("error: no parameter !\n");
-    }
+void _run(){
+  system("sh $HOME/.hyckm/src/main.sh");
 }
+
+char *join(char *a, char *b) {/*{{{*/
+  char *c = (char *) malloc(strlen(a) + strlen(b) + 1); 
+  //局部变量，用malloc申请内存,strlen不算'\0'，所以需要+1
+  if (c == NULL) exit (1);
+  char *tempc = c; //把首地址存下来
+  while (*a != '\0') {
+      *c++ = *a++;
+  }
+  while ((*c++ = *b++) != '\0') {
+      ;
+  }
+  //注意，此时指针c已经指向拼接之后的字符串的结尾'\0' !
+  return tempc;
+  //返回值是局部malloc申请的指针变量，需在函数调用结束后free。
+}/*}}}*/
 
 void tips_info(){/*{{{*/
   printf("       ==================\
@@ -63,21 +76,5 @@ void tips_info(){/*{{{*/
         \n   ---------------\
         \n   | ← Backspace | : BackSpace\
         \n   ---------------\n");
-}/*}}}*/
-
-char *join(char *a, char *b) {/*{{{*/
-  char *c = (char *) malloc(strlen(a) + strlen(b) + 1); 
-  //局部变量，用malloc申请内存,strlen不算'\0'，所以需要+1
-  if (c == NULL) exit (1);
-  char *tempc = c; //把首地址存下来
-  while (*a != '\0') {
-      *c++ = *a++;
-  }
-  while ((*c++ = *b++) != '\0') {
-      ;
-  }
-  //注意，此时指针c已经指向拼接之后的字符串的结尾'\0' !
-  return tempc;
-  //返回值是局部malloc申请的指针变量，需在函数调用结束后free。
 }/*}}}*/
 
