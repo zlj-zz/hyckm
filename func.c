@@ -20,7 +20,7 @@
 /*char* version = "0.1";*/
 void help_info(){
   printf("hyckm %s - (C) 2020 Zachary\n", VERSION);
-  printf("Usage: hyckm [command]\n\n");
+  printf("\e[1mUsage\e[m: hyckm [command]\n\n");
 
   printf("    -h  --help      : Show this message\
         \n    -v  --version   : Display version information\
