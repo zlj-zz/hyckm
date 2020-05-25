@@ -5,7 +5,7 @@ set -u
 version=0.1
 path=~/.hyckm
 #ln -s $HOME/.hyckm/main.sh $HOME/.local/bin/hyckm
-gcc -o ~/.local/bin/hyckm $path/hyckm.c $path/func.c
+gcc -o ~/.local/bin/hyckm $path/hyckm.c $path/func.c $path/config.c
 
 echo "version $version"
 echo "install finished ! use 'hyckm' to start."

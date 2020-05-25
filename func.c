@@ -7,14 +7,14 @@
  * Last Modified: 2020-05-24
  * Description: needed function
  */
-#define VER
+/*#define VER*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "config.h"
 #include "func.h"
+#include "config.h"
 
 
 /*char* version = "0.1";*/
@@ -31,11 +31,11 @@ void version_info(){
     printf("hyckm version (%s)\n\n", VERSION);
 }
 
-void revert(){
+void revert_mapping(){
   system("sh $HOME/.hyckm/src/revert.sh");
 }
 
-void _run(){
+void run_mapping(){
   system("sh $HOME/.hyckm/src/main.sh");
 }
 

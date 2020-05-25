@@ -8,8 +8,8 @@
  * Version: 0.1
  * Description: To help you change your keyboard mapping
  */
-#define FUNC
-#define XMOD
+
+/*#define XMOD*/
 
 #include <unistd.h>
 #include <getopt.h>
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
   if (flag){ 
     /*system("clear");*/
-    _run();
+    run_mapping();
   }
   return 0;
 }
@@ -61,7 +61,7 @@ static int parseArguments(int argc, char ** argv){/*{{{*/
         version_info();
         break;
       case 'r':
-        revert();
+        revert_mapping();
         break;
       default:
         exit(0);
