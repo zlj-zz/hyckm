@@ -16,21 +16,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "hyckm.h"
 #include "config.h"
 #include "func.h"
 
 
-static int parseArguments(int argc, char ** argv);
-
-
 int main(int argc, char *argv[])
 {
-  int flag = parseArguments(argc, argv); // may exit()
+  checkXMODMAP();
 
-  if (access(XMODMAP, R_OK) != 0){ // check if 'xmodmap' command
-    printf("error: don't find 'xmodmap'.\n");
-    exit(1);
-  }
+  int flag = parseArguments(argc, argv); // may exit()
 
   if (flag){ 
     /*system("clear");*/
@@ -38,6 +33,15 @@ int main(int argc, char *argv[])
   }
   return 0;
 }
+
+void checkXMODMAP()/*{{{*/
+/* check xmodmap if exists. */
+{
+  if (access(XMODMAP, R_OK) != 0){ // check if 'xmodmap' command
+    printf("error: don't find 'xmodmap'.\n");
+    exit(1);
+  }
+}/*}}}*/
 
 static int parseArguments(int argc, char ** argv){/*{{{*/
   int flag = 1;

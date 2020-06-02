@@ -8,12 +8,13 @@
  * Description:
  */
 
-#ifndef FUNC_H
-#define FUNC_H
-void help_info();
-void version_info();
-void revert_mapping();
-void run_mapping();
+#ifndef _FUNC_H
+#define _FUNC_H
 
+void help_info(); // print help infomation
+void version_info(); // print version infomation
+void revert_mapping(); // revert the keyboard mapping
+void run_mapping();
 char *join(char *a, char *b);
+
 #endif

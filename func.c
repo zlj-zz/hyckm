@@ -4,20 +4,19 @@
  * FileName: func.c
  * Author: zachary
  * Date: 2020-05-23
- * Last Modified: 2020-05-24
+ * Last Modified: 2020-06-02
  * Description: needed function
  */
-/*#define VER*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <curses.h>
 
 #include "func.h"
 #include "config.h"
 
 
-/*char* version = "0.1";*/
 void help_info(){
   printf("hyckm %s - (C) 2020 Zachary\n", VERSION);
   printf("\e[1mUsage\e[m: hyckm [command]\n\n");
@@ -28,7 +27,8 @@ void help_info(){
 }
 
 void version_info(){
-    printf("hyckm version (%s)\n\n", VERSION);
+    printf("hyckm version (%s)\n", VERSION);
+    printf("  -- To help you change your keyboard mapping.\n\n");
 }
 
 void revert_mapping(){
@@ -36,7 +36,9 @@ void revert_mapping(){
 }
 
 void run_mapping(){
+  /*initscr();*/
   system("sh $HOME/.hyckm/src/main.sh");
+  /*endwin();*/
 }
 
 char *join(char *a, char *b) {/*{{{*/

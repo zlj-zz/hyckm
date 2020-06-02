@@ -4,15 +4,16 @@
  * Author: zachary
  *
  * Date: 2020-05-24
- * Last Modified: 
+ * Last Modified: 2020-06-02
  * Description: global config
  */
 
 
-#ifndef CONFIG_H
-#define CONFIG_H
-char const* VERSION;
-char const* XMODMAP;
+#ifndef  _CONFIG_H
+#define  _CONFIG_H
+
+extern char const* VERSION;
+extern char const* XMODMAP;
 
 #define R_OK 4  /* Test for read permission.  */
 #define W_OK 2  /* Test for write permission.  */
@@ -21,6 +22,3 @@ char const* XMODMAP;
 
 #endif
 
-//#ifdef XMOD
-//char const* XMODMAP = "/usr/bin/xmodmap";
-//#endif
