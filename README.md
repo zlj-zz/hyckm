@@ -6,7 +6,7 @@ Help you to change the keyboard mapping of Linux system more easily.
 
 ```shell
 git clone --depth=1 https://github.com/zlj-zz/hyckm.git ~/.hyckm
-~/.hyckm/install
+make install
 ```
 
 ## Use
@@ -36,7 +36,7 @@ git pull
 ## Uninstall
 
 ```shell
-~/.hyckm/uninstall
+make uninstall
 rm ~/.hyckm
 ```
 

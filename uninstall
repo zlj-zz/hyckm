@@ -1,7 +1,0 @@
-#!/bin/env bash
-
-set -u
-
-rm ~/.local/bin/hyckm
-
-echo "uninstall finished."
