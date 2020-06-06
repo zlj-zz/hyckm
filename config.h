@@ -12,8 +12,10 @@
 #ifndef  _CONFIG_H
 #define  _CONFIG_H
 
-extern char const* VERSION;
-extern char const* XMODMAP;
+extern char *VERSION;
+extern char *XMODMAP;
+extern char *MAPFILE;
+extern char *MAPPINGSCRIPT;
 
 #define R_OK 4  /* Test for read permission.  */
 #define W_OK 2  /* Test for write permission.  */

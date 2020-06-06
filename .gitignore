@@ -13,3 +13,6 @@ hyckm
 test.sh
 test.c
 test
+config.o
+func.o
+hyckm.o

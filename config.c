@@ -4,11 +4,13 @@
  * Author: zachary
  * Version: 0.2
  * Date: 2020-05-25
- * Last Modified: 2020-06-02
+ * Last Modified: 2020-06-06
  * Description: some global configuration parameters.
  */
 
 
-char const* VERSION = "0.2";
-char const* XMODMAP = "/usr/bin/xmodmap";
+char *VERSION = "0.2";
+char *XMODMAP = "/usr/bin/xmodmap";
+char *MAPFILE = "/.Xmodmaprc";
+char *MAPPINGSCRIPT = "sh ./src/change_key.sh ";
 
