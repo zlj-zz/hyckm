@@ -8,9 +8,7 @@
  * Description: some global configuration parameters.
  */
 
-
-char *VERSION = "0.2";
-char *XMODMAP = "/usr/bin/xmodmap";
-char *MAPFILE = "/.Xmodmaprc";
-char *MAPPINGSCRIPT = "sh ./src/change_key.sh ";
-
+char* VERSION = "0.2";
+char* XMODMAP = "/usr/bin/xmodmap";
+char* MAPFILE = "/.Xmodmaprc";
+char* MAPPINGSCRIPT = "sh ./src/change_key.sh ";

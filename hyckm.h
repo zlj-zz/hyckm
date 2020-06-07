@@ -12,7 +12,6 @@
 #define _HYCKM_H
 
 extern void checkXMODMAP();
-static int parseArguments(int argc, char ** argv);
+static int parseArguments(int argc, char** argv);
 
 #endif
-
