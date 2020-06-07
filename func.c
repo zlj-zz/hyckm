@@ -242,7 +242,7 @@ void revert_mapping()
 } /*}}}*/
 
 void run_mapping()
-{
+{/*{{{*/
     initial();
     int row = add_head_info();
     int ch = 0;
@@ -259,7 +259,7 @@ void run_mapping()
     addch(ch);
     refresh();
     if (ch == 'y' || ch == 'Y') {
-        system("echo \"if [[ -e ~/.Xmodmaprc ]];then xmodmap ~/.Xmodmaprc; fi\" >> ~/.bash_profile");
+        system(SHELLCOMMAND1);
     }
     deleteln();
 
@@ -272,13 +272,14 @@ void run_mapping()
     addch(ch);
     refresh();
     if (ch == 'y' || ch == 'Y') {
-        system("xmodmap ~/.Xmodmaprc");
+        system(SHELLCOMMAND2);
         endwin();
     } else {
         endwin();
-        printf("you can type 'xmodmap $map_path' to take effect your changes.\n");
+        printf(INTERACTION9);
     }
 
-    printf("Mapping Over.\n");
+    printf(OVER);
     exit(0);
-}
+}/*}}}*/
+
