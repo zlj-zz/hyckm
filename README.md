@@ -1,6 +1,6 @@
 # HYCKM
 
-Help you to change the keyboard mapping of Linux system more easily.
+Help you to change the keyboard mapping of **Linux** system more easily.
 
 ## Install
 
@@ -39,5 +39,3 @@ git pull
 make uninstall
 rm ~/.hyckm
 ```
-
-

@@ -4,7 +4,7 @@
  * Author: zachary
  *
  * Date: 2020-05-24
- * Last Modified: 2020-06-06
+ * Last Modified: 2020-11-24
  * Description: function all here.
  */
 
@@ -34,13 +34,13 @@ void run_mapping();
 #define TIP_IDENT 5
 #define TIP0    "   "
 #define TIP1    "What keymap you want to change ?"
-#define TIP2    "If want to map 'Escape' to 'Caps_Lock', like (Escape Caps_Lock)."
+#define TIP2    "If want to map 'Escape' to 'CapsLock', like (Escape CapsLock)."
 #define TIP3    "Support a-z(please input lower case) 0-9 F1-F12."
 #define TIP4    "   "
 #define TIP5    "Some keys you should input such names, there are:"
-#define TIP6    "-------            -------------               -----------              "
-#define TIP7    "| ESC | : Escape   | Cpas Lock | : Caps_Lock   | Shift ^ | : Shift_(L/R)"
-#define TIP8    "-------            -------------               -----------              "
+#define TIP6    "-------            ------------               -----------              "
+#define TIP7    "| ESC | : Escape   | CpasLock | : Caps_Lock   | Shift ^ | : Shift_(L/R)"
+#define TIP8    "-------            ------------               -----------              "
 #define TIP9    "--------                   -------               ---------          "
 #define TIP10   "| Ctrl | : Control_(L/R)   | Alt | : Alt_(L/R)   | Win * | : Super_L"
 #define TIP11   "--------                   -------               ---------          "
