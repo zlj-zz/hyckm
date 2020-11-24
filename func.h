@@ -16,8 +16,8 @@ void version_info(); // print version infomation
 int my_mvaddstr(int y, int x, char* str);
 int add_head_info();
 int check_file_if_exists(char* path); // check file
-void create_xmodmaprc(char* file_path, int row);
-void process_Xmodmaprc(int* row);
+void create_Xmodmap(char* file_path, int row);
+void process_Xmodmap(int* row);
 void deleteln_of_i(int i, int* row);
 int key_if_valid(char* key);
 void write_keymapping_to_file(char* key1, char* key2);
@@ -50,8 +50,8 @@ void run_mapping();
 #define TIP15   "   "
 
 #define INTERACTION_IDENT 5
-#define INTERACTION0 "Created file '~/.Xmodmaprc' "
-#define INTERACTION1 "The '~/.Xmodmaprc' exists (1:append 2:recreate other:quit):"
+#define INTERACTION0 "Created file '~/.Xmodmap' "
+#define INTERACTION1 "The '~/.Xmodmap' exists (1:append 2:recreate other:quit):"
 #define INTERACTION2 "If change key ? (y/n):"
 #define INTERACTION3 "Please input (2 keys), the from key:"
 #define INTERACTION4 ";the to key:"
@@ -59,10 +59,10 @@ void run_mapping();
 #define INTERACTION6 "OK, no problem."
 #define INTERACTION7 "Do you want to add it to system startup ? (y/n):"
 #define INTERACTION8 "Do you want to change the keys immediately ? (y/n):"
-#define INTERACTION9 "you can type 'xmodmap ~/.Xmodmaprc' to take effect your changes.\n"
+#define INTERACTION9 "you can type 'xmodmap ~/.Xmodmap' to take effect your changes.\n"
 
 #define OVER "Mapping Over.\n"
 
-#define SHELLCOMMAND1 "echo \"if [[ -e ~/.Xmodmaprc ]];then xmodmap ~/.Xmodmaprc; fi\" >> ~/.bash_profile"
-#define SHELLCOMMAND2 "xmodmap ~/.Xmodmaprc"
+#define SHELLCOMMAND1 "echo \"if [[ -e ~/.Xmodmap ]];then xmodmap ~/.Xmodmap; fi\" >> ~/.bash_profile"
+#define SHELLCOMMAND2 "xmodmap ~/.Xmodmap"
 
